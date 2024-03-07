@@ -1,0 +1,31 @@
+def leer_mat():
+    aux = [[0]*3 for _ in range(2)]
+    for i in range(2):
+        for j in range(2):
+            try:
+                entrada = input(f"Introduce elemento ({i}, {j}): ")
+                aux[i][j] = int(entrada)
+            except Exception as error:
+                print(f"Error: {error}")
+    return aux
+
+def sumar_mat(A, B):
+    aux = [[0]*2 for _ in range(3)]
+    for i in range(2):
+        for j in range(2):
+            aux[i][j] = A[i][j] + B[i][j]
+    return aux
+
+def imprimir_mat(Matriz):
+    for i in range(2):
+        for j in range(2):
+            print(Matriz[i][j], end=" ")
+        print()
+
+if __name__ == "__main__":
+    A = leer_mat()
+    B = leer_mat()
+    C = sumar_mat(A, B)
+    imprimir_mat(A)
+    imprimir_mat(B)
+    imprimir_mat(C)
